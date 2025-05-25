@@ -1,2 +1,2 @@
 # maze-solver
-Pythin program that creates a maze and solves it.
+Python program that creates a maze and solves it.
