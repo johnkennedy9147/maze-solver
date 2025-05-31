@@ -41,3 +41,13 @@ class Cell:
             self.__win.draw_line(Line(Point(__x1, __y1), Point(__x2, __y1)), "black")
         if self.has_bottom_wall:
             self.__win.draw_line(Line(Point(__x1, __y2), Point(__x2, __y2)), "black")
+
+    def draw_move(self, to_cell, undo=False):
+        __colour = "red" if not undo else "gray"
+        start_cell_center = Point(
+            (self.__x1 + self.__x2) / 2, (self.__y1 + self.__y2) / 2
+        )
+        end_cell_center = Point(
+            (to_cell.__x1 + to_cell.__x2) / 2, (to_cell.__y1 + to_cell.__y2) / 2
+        )
+        self.__win.draw_line(Line(start_cell_center, end_cell_center), __colour)
