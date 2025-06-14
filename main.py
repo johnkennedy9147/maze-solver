@@ -3,8 +3,8 @@ from window import Window
 
 
 def main():
-    num_rows = 5
-    num_cols = 5
+    num_rows = 10
+    num_cols = 10
     margin = 50
     screen_x = 800
     screen_y = 600
@@ -13,6 +13,13 @@ def main():
     win = Window(screen_x, screen_y)
 
     maze = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, seed=1)
+
+    print("Maze created - attempting to solve.")
+    solveable = maze.solve()
+    if solveable:
+        print("Maze is solvable.")
+    else:
+        print("Maze is not solvable.")
 
     win.wait_for_close()
 
